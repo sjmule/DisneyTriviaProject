@@ -1,0 +1,45 @@
+ <html>
+    <head>
+	 <title> The webmaster has arrived </title>
+      <style type="text/css">
+#scroll{
+         position : absolute;
+      white-space : nowrap;
+              top : 0px;
+             left : 20px;
+       }
+#oScroll{
+	   margin : 0px;
+	  padding : 0px;
+         position : center;
+            width : 20px;
+           height : 20px;
+         overflow : hidden;
+        }
+      </style>
+      <script type="text/javascript">
+     function scroll(oid,iid){
+          this.oCont=document.getElementById(oid)
+          this.ele=document.getElementById(iid)
+          this.width=this.ele.clientWidth;
+          this.n=this.oCont.clientWidth;
+          this.move=function(){
+             this.ele.style.left=this.n+"px"
+             this.n--
+             if(this.n<(-this.width)){this.n=this.oCont.clientWidth}
+                              }
+                             }
+     var vScroll
+     function setup(){
+         vScroll=new scroll("oScroll","scroll");
+         setInterval("vScroll.move()",20)
+                     }
+  onload=function(){setup()}
+      </script>
+    </head>
+    <body>
+    <div id="oScroll">
+        <div id="scroll">    Power to the webmen!!   </div>
+    </div>
+    </body>
+  </html>
